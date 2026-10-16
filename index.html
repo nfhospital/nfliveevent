@@ -18,229 +18,83 @@
             --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.8; overflow-x: hidden; }
 
         /* Hero Header */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            padding: 4rem 1rem 6rem;
-            text-align: center;
-            color: var(--white);
-            border-radius: 0 0 50px 50px;
-            box-shadow: 0 10px 30px rgba(7, 140, 128, 0.2);
-            position: relative;
+            padding: 4rem 1rem 6rem; text-align: center; color: var(--white);
+            border-radius: 0 0 50px 50px; box-shadow: 0 10px 30px rgba(7, 140, 128, 0.2); position: relative;
         }
-
         .top-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(5px);
+            display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px;
+            border-radius: 30px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 1.5rem; backdrop-filter: blur(5px);
         }
-
-        .main-title {
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 2px 4px 8px rgba(0,0,0,0.2);
-            line-height: 1.2;
-        }
+        .main-title { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.2); line-height: 1.2; }
 
         /* Video Section */
-        .video-container {
-            max-width: 1100px;
-            margin: -80px auto 3rem;
-            padding: 0 15px;
-            position: relative;
-            z-index: 10;
-        }
-
+        .video-container { max-width: 1100px; margin: -80px auto 3rem; padding: 0 15px; position: relative; z-index: 10; }
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 5px solid var(--white);
+            position: relative; padding-bottom: 56.25%; background: #000; border-radius: 20px;
+            overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 5px solid var(--white);
         }
-
         .waiting-screen {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-            z-index: 2;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)); color: var(--white); text-align: center; padding: 2rem; z-index: 2;
         }
-
         .pulse-circle {
-            width: 80px; height: 80px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2rem;
-            animation: pulse 2s infinite;
-            margin-bottom: 20px;
+            width: 80px; height: 80px; background: var(--primary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem;
+            animation: pulse 2s infinite; margin-bottom: 20px;
         }
-
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(7, 140, 128, 0.7); }
             70% { box-shadow: 0 0 0 20px rgba(7, 140, 128, 0); }
             100% { box-shadow: 0 0 0 0 rgba(7, 140, 128, 0); }
         }
-
-        .video-wrapper iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 1;
-        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 1; }
 
         /* Layout Grid */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px 3rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px 3rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
 
         /* Cards Design */
         .card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--white); border-radius: 24px; padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: all 0.3s ease; position: relative; overflow: hidden;
         }
-
         .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(7, 140, 128, 0.1);
-        }
-
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(7, 140, 128, 0.1); }
         .card:hover::before { transform: scaleX(1); }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed var(--primary-light);
-        }
-
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; padding-bottom: 15px; border-bottom: 2px dashed var(--primary-light); }
         .card-icon {
-            width: 45px; height: 45px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
+            width: 45px; height: 45px; background: var(--primary-light); color: var(--primary);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
         }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        /* Details List */
-        .info-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
+        .card-title { font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); }
+        .info-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 1rem; font-size: 1.05rem; font-weight: 500; }
         .info-list i { color: var(--primary); margin-top: 5px; }
 
         /* Speaker Section */
-        .speaker-box {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .speaker-img {
-            width: 120px; height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary-light);
-            padding: 5px;
-        }
-
-        /* Typography */
+        .speaker-box { display: flex; gap: 20px; align-items: center; margin-bottom: 1.5rem; }
+        .speaker-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); padding: 5px; }
         .text-content { color: var(--text-gray); font-size: 1rem; text-align: justify; }
         .text-content p { margin-bottom: 1rem; }
         .highlight { color: var(--primary); font-weight: 600; }
-
         .badge {
-            background: linear-gradient(45deg, #f59e0b, #fbbf24);
-            color: #fff;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex; align-items: center; gap: 8px;
-            margin-top: 10px;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24); color: #fff; padding: 6px 15px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
         }
 
         /* Hospital Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .gallery img {
-            width: 100%; height: 220px;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; transition: 0.3s; }
         .gallery img:hover { transform: scale(1.02); }
 
         @media (max-width: 768px) {
@@ -253,26 +107,21 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header class="hero">
         <div class="top-badge">A Monthly Gathering for Doctors</div>
         <h1 class="main-title">LOOKING BEYOND MEDICINE</h1>
         <p style="font-size: 1.1rem; opacity: 0.9;"><i class="fas fa-hospital"></i> Host: Neuro Foundation, Salem</p>
     </header>
 
-    <!-- Video Section -->
     <section class="video-container">
         <div class="video-wrapper">
-            
             <div class="waiting-screen" id="waitingScreen">
                 <div class="pulse-circle"><i class="fas fa-video"></i></div>
                 <h2 style="font-size: 2rem; margin-bottom: 10px;">Live Stream Will Begin Shortly</h2>
-                <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 15px;">20th September 2026 | Starts at 10:30 AM</p>
+                <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 15px;">25th October 2026 | Starts at 10:30 AM</p>
                 <div id="statusText" style="background: var(--primary); padding: 5px 20px; border-radius: 20px; font-weight: bold;">Checking for live video...</div>
             </div>
-            
             <iframe id="liveFrame" src="" allow="autoplay; fullscreen" allowfullscreen style="display: none;"></iframe>
-
         </div>
     </section>
 
@@ -285,7 +134,7 @@
                     <h2 class="card-title">Event Details</h2>
                 </div>
                 <ul class="info-list" style="list-style: none;">
-                    <li><i class="far fa-calendar-alt"></i> <div><span class="highlight">20th September 2026</span> <br>(3rd Sunday)</div></li>
+                    <li><i class="far fa-calendar-alt"></i> <div><span class="highlight">25th October 2026</span> <br>(4th Sunday)</div></li>
                     <li><i class="far fa-clock"></i> <div>Starts at <span class="highlight">10.30 am</span></div></li>
                     <li><i class="fas fa-map-marker-alt"></i> <div>The Radisson, Salem</div></li>
                     <li><i class="fas fa-hospital-user"></i> <div>Host: Neuro Foundation, Salem <br><small>Committed to Neurosciences</small></div></li>
@@ -296,20 +145,20 @@
             <!-- Speaker Details -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="card-icon"><i class="fas fa-user-tie"></i></div>
                     <h2 class="card-title">The Speaker</h2>
                 </div>
                 <div class="speaker-box">
-                    <img src="speaker.jpg" alt="Dr. Roopesh Kumar" class="speaker-img" onerror="this.src='https://via.placeholder.com/150/078c80/fff?text=Speaker'">
+                    <img src="speaker.jpg" alt="Thiru V. Irai Anbu" class="speaker-img" onerror="this.src='https://via.placeholder.com/150/078c80/fff?text=Speaker'">
                     <div>
-                        <h3 style="font-size: 1.4rem; color: var(--text-dark);">Dr. Roopesh Kumar</h3>
-                        <p class="highlight">Director - Neurosurgery</p>
-                        <p style="color: var(--text-gray); font-size: 0.9rem;">MGM Healthcare, Chennai</p>
+                        <h3 style="font-size: 1.4rem; color: var(--text-dark);">Thiru V. Irai Anbu, IAS (Retd.)</h3>
+                        <p class="highlight">Former Chief Secretary</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Government of Tamil Nadu</p>
                     </div>
                 </div>
                 <div class="text-content" style="font-size: 0.95rem;">
-                    <p>Internationally acclaimed Neurosurgeon bringing over 20 years of clinical expertise. Specialises in managing complex brain and spine tumours, minimally invasive cranial surgeries, and cerebrovascular surgeries.</p>
-                    <p>Recognised as one of the top 50 influential doctors on social media in India by SPAG FINN Partners.</p>
+                    <p>A Distinguished Civil Servant, Author, Educator, and Motivational Speaker from the 1988-batch IAS.</p>
+                    <p>He held key leadership roles across administration, development, tourism, culture, and public service. His career reflects integrity, thoughtful governance, and a deep commitment to people-centered progress.</p>
                 </div>
             </div>
         </div>
@@ -318,13 +167,13 @@
             <!-- The Content -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-icon"><i class="fas fa-book-open"></i></div>
-                    <h2 class="card-title">The Content: The Rashomon Effect in Healthcare</h2>
+                    <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h2 class="card-title">Living Well: Work-Life Balance</h2>
                 </div>
                 <div class="text-content">
-                    <p><strong>"Rashomon"</strong>, the film directed by Akira Kurosawa and released in 1950, introduced the world to the "Rashomon effect"—a term used when different eyewitnesses give contradictory accounts of the same event.</p>
-                    <p>A single clinical encounter, a diagnosis delivered, a complication explained is remembered differently by the doctor who gave it, the patient who received it, and the family who stood beside them. None of these versions is a lie. Each is shaped by fear, hope, medical training, or grief.</p>
-                    <p>This session explores practical approaches to communication and consent that acknowledge this gap before it widens into mistrust. Come prepared to recognise a story you have lived through more than once—from more than one side.</p>
+                    <p>Medicine is a meaningful calling - but caring for others should not mean losing ourselves. Beyond the clinic are families to cherish, passions to rediscover, journeys to take, and a life to enjoy.</p>
+                    <p>Can excellence and balance grow together? Join Thiru V. Irai Anbu for an inspiring conversation on purpose, relationships, resilience, and the art of living well.</p>
+                    <p>Pause. Listen. Reflect. Return with practical ideas to protect your energy, make space for what matters, and build a career that is successful, balanced, and joyful. Step away from the rush and rediscover life beyond medicine.</p>
                 </div>
             </div>
 
@@ -335,9 +184,9 @@
                     <h2 class="card-title">The Purpose..</h2>
                 </div>
                 <div class="text-content">
-                    <p>Medicine trains us with rare precision in diagnosis, in techniques and in the discipline of healing. Yet beyond the clinic lies a world our training rarely touches: the psychology of trust, the building of institutions, the ethics of growth, communication, Finance, and now, the quiet arrival of AI reshaping medicine itself.</p>
-                    <p>This program is designed to bridge that gap. Each month, over lunch on the third Sunday, we turn to one such dimension—not as a lecture, but as a conversation among colleagues, each carrying experience the other has yet to discover.</p>
-                    <p class="highlight" style="font-size: 1.1rem; text-align: center; margin-top: 20px;">This is an invitation to look, together, at the parts of our profession we have long navigated alone.</p>
+                    <p>Looking Beyond Medicine is a vibrant monthly forum for doctors ready to think wider, lead better, and live more purposefully. Each gathering brings an accomplished voice from outside the clinical world to spark fresh thinking.</p>
+                    <p>Expect practical insights, candid conversations, shared experiences, and meaningful connections with peers. Here, new perspectives become confident decisions, stronger teams, and more fulfilling careers.</p>
+                    <p class="highlight" style="font-size: 1.1rem; text-align: center; margin-top: 20px;">May this Deepavali shower prosperity and happiness.</p>
                 </div>
             </div>
         </div>
@@ -362,7 +211,7 @@
             if (!url) return null;
             let videoID = String(url).trim();
             if (videoID.includes('youtube.com') || videoID.includes('youtu.be')) {
-                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|live\/|watch\?v=|\&v=)([^#\&\?]*).*/;
                 const match = videoID.match(regExp);
                 if (match && match[2].length === 11) {
                     return match[2];
@@ -378,14 +227,12 @@
             const liveFrame = document.getElementById("liveFrame");
             const statusText = document.getElementById("statusText");
 
-            // If API_URL is not updated by user, don't throw error
             if (API_URL === "INGA_UNGA_WEB_APP_URL_PASTE_PANNUNGA") {
                 statusText.innerText = "Please add Web App URL in code";
                 return;
             }
 
             try {
-                // Fetching data from Google Script
                 const response = await fetch(API_URL);
                 if (!response.ok) throw new Error("Network response was not ok");
                 
@@ -420,7 +267,6 @@
             }
         }
 
-        // Run immediately on load, then check every 15 seconds
         checkLiveVideo();
         setInterval(checkLiveVideo, 15000); 
     </script>
