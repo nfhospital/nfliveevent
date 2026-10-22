@@ -133,7 +133,7 @@
         </div>
     </section>
 
-    <!-- LIVE CHAT SECTION (NEW) -->
+    <!-- LIVE CHAT SECTION -->
     <section class="chat-container">
         <div class="chat-card">
             <div class="chat-header">
@@ -153,7 +153,6 @@
             <!-- Chat Room -->
             <div class="chat-room" id="chatRoomArea">
                 <div class="chat-messages" id="chatMessagesBox">
-                    <!-- Messages will load here -->
                     <div style="text-align: center; color: var(--text-gray); font-size: 0.85rem; margin-top: auto;">Welcome to the live discussion!</div>
                 </div>
                 <div class="chat-input-area">
@@ -226,7 +225,6 @@
 
     <!-- MAIN SCRIPT SECTION -->
     <script>
-        // 🛑 REPLACE THE LINK BELOW WITH YOUR PUDHU GOOGLE APPS SCRIPT WEB APP URL
         const API_URL = "https://script.google.com/macros/s/AKfycbw3pu148mnmoAK3O6VOc8RBDZVk2P5f4yfxejJE5B_ks-DEeGxjPHVGNNXYYZbArpuZ/exec";
 
         // --- 1. VIDEO HANDLING CODE ---
@@ -242,11 +240,7 @@
         }
 
         async function checkLiveVideo() {
-            if (API_URL === "https://script.google.com/macros/s/AKfycbw3pu148mnmoAK3O6VOc8RBDZVk2P5f4yfxejJE5B_ks-DEeGxjPHVGNNXYYZbArpuZ/exec") {
-                document.getElementById("statusText").innerText = "Please add Web App URL in code"; return;
-            }
             try {
-                // By default Action is "getVideo"
                 const response = await fetch(API_URL); 
                 const data = await response.json();
                 const waitingScreen = document.getElementById("waitingScreen");
@@ -283,7 +277,6 @@
             document.getElementById("chatActiveUser").innerText = "Logged in as " + myName;
             
             fetchChatMessages();
-            // Chat message ah ovvoru 5 seconds kum refresh pannum
             chatInterval = setInterval(fetchChatMessages, 5000); 
         }
 
@@ -294,21 +287,18 @@
                 
                 if(data.status === "success" && data.messages) {
                     const box = document.getElementById("chatMessagesBox");
-                    // User already kela irukara nu check pandrathu (Auto-scroll kaga)
                     const isAtBottom = box.scrollHeight - box.scrollTop <= box.clientHeight + 50;
                     
-                    box.innerHTML = ""; // Pazhaya messages ah clear pandrathu
+                    box.innerHTML = ""; 
                     
                     data.messages.forEach(msg => {
                         const div = document.createElement("div");
-                        // Namma anupina message ku right side alignment and green color
                         const isMe = (msg.name === myName);
                         div.className = "msg-bubble " + (isMe ? "my-msg" : "other-msg");
                         div.innerHTML = `<strong>${msg.name}</strong> ${msg.message} <span class="time">${msg.timestamp}</span>`;
                         box.appendChild(div);
                     });
                     
-                    // Puthu message vantha automatic ah kela scroll aagum
                     if(isAtBottom) box.scrollTop = box.scrollHeight;
                 }
             } catch (e) { console.error("Chat fetch error:", e); }
@@ -319,14 +309,13 @@
             const text = input.value.trim();
             if(!text) return;
             
-            input.value = ""; // Input clear pandrathu
+            input.value = ""; 
             
-            // CORS prachana varama iruka, simple GET request ah message ah anupurom
             const postUrl = `${API_URL}?action=postMessage&name=${encodeURIComponent(myName)}&mobile=${encodeURIComponent(myMobile)}&message=${encodeURIComponent(text)}`;
             
             try {
                 await fetch(postUrl);
-                fetchChatMessages(); // Message anupina odane chat ah refresh pandrathu
+                fetchChatMessages(); 
             } catch(e) {
                 console.error("Message send error:", e);
             }
@@ -336,7 +325,6 @@
             if(e.key === "Enter") sendChatMessage();
         }
 
-        // Start video checker
         checkLiveVideo();
         setInterval(checkLiveVideo, 15000); 
 
